@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8x8 WFM Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Inter, sans-serif;
+            background-color: #F4F3EE;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        /* Fix for greeting message visibility */
+        iframe {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Airia Chat Embed -->
+    <script type="module">
+    import AiriaChat from "https://embed-api.airia.ai/get-chat-embed-v2.js"
+
+    // Calculate dynamic dimensions (30% width, 80% height of window)
+    const chatWidth = Math.floor(window.innerWidth * 0.30);
+    const chatHeight = Math.floor(window.innerHeight * 0.80);
+
+    AiriaChat.init({
+    pipelineId: "90d0d608-a7c1-4748-888e-d5df3a66dbf8",
+    apiKey: "ak-MTA3NDQwNTE2NHwxNzcwODI0MzIzNjg1fHRpLU9IZzRMU0JVWldGdGN3PT18MXwzNDQ0MTU4MzA4",
+                            apiUrl: "https://embed-api.airia.ai",
+    greeting: "Hi! I'm your 8x8 Workforce Management assistant.\nAsk me anything about forecasting, scheduling, or managing your team. Open the app and then come back to me if you need any help.",
+    defaultWidth: chatWidth,
+    defaultHeight: chatHeight,
+    theme: {
+    primaryColor: "#04888a",
+    headerButtonColor: "#292929",
+    background: "#F4F3EE",
+    userBubbleColor: "#ffffff",
+    userMessageColor: "#292929",
+    assistantMessageColor: "#292929",
+    timestampColor: "#3a3a38",
+    disclaimerColor: "#6C6862",
+    placeholderColor: "#6C6862",
+    fontFamily: "Inter",
+    placeholderText: "Type a message"
+    }
+    })
+    </script>
+</body>
+</html>
